@@ -164,8 +164,8 @@ public final class PreferencesDialog extends JDialog {
         tab.add(accentCard);
         tab.add(Box.createVerticalStrut(12));
 
-        // 3. Materials & Glass Sliders Card
-        JPanel glassCard = createStyledSectionCard("Liquid Glass Materials & Edge Curvature");
+        // 3. Materials & Corner Radius Card
+        JPanel glassCard = createStyledSectionCard("Appearance & Corner Radius");
         glassCard.setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.insets = new Insets(5, 6, 5, 6);
@@ -173,7 +173,7 @@ public final class PreferencesDialog extends JDialog {
 
         // Opacity
         gbc.gridx = 0; gbc.gridy = 0; gbc.weightx = 0.25;
-        JLabel opLbl = new JLabel("Glass Opacity:");
+        JLabel opLbl = new JLabel("Surface Opacity:");
         opLbl.setFont(DrawbotTheme.FONT_BOLD);
         opLbl.setForeground(DrawbotTheme.TEXT_SECONDARY);
         glassCard.add(opLbl, gbc);
@@ -197,7 +197,7 @@ public final class PreferencesDialog extends JDialog {
 
         // Specular Luster
         gbc.gridx = 0; gbc.gridy = 1; gbc.weightx = 0.25;
-        JLabel specLbl = new JLabel("Specular Sheen:");
+        JLabel specLbl = new JLabel("Top Sheen:");
         specLbl.setFont(DrawbotTheme.FONT_BOLD);
         specLbl.setForeground(DrawbotTheme.TEXT_SECONDARY);
         glassCard.add(specLbl, gbc);

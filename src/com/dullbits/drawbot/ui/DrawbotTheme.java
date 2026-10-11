@@ -18,55 +18,55 @@ public final class DrawbotTheme {
 
     private DrawbotTheme() {}
 
-    // --- Apple Liquid Glass Design Language Tokens (Dynamic Theme Tokens) ---
-    public static Color BG_WINDOW        = new Color(20, 22, 27);       // Layer 0 / Deep Obsidian Studio Base (#14161B)
-    public static Color BG_WORKSPACE     = new Color(16, 17, 21);       // Physical Drawing Studio Canvas Base (#101115)
-    public static Color BG_SIDEBAR       = new Color(24, 27, 34);       // Layer 1 / Frosted Obsidian Sidebar (#181B22)
-    public static Color BG_CARD          = new Color(32, 36, 46);       // Layer 2 / Elevated Liquid Glass Card (#20242E)
-    public static Color BG_CARD_SUBTLE   = new Color(26, 29, 38);       // Nested Inset Glass Container (#1A1D26)
-    public static Color BG_INPUT         = new Color(18, 20, 26);       // Glass Inset Field Background (#12141A)
-    public static Color BG_TOOLBAR       = new Color(24, 26, 33);       // Liquid Glass Command Bar Surface (#181A21)
-    public static Color BG_STATUS        = new Color(18, 20, 26);       // Frosted Glass Status Dock (#12141A)
-    public static Color BG_PAPER         = Color.WHITE;                 // Physical Drawing Sheet
-    public static Color BG_SELECTION     = new Color(10, 132, 255, 180);// Apple System Blue Selection
-    public static Color BG_GLASS_SURFACE = new Color(36, 40, 52, 210); // Translucent Frosted Glass Material
+    // --- Theme Color & Layout Tokens ---
+    public static Color BG_WINDOW        = new Color(20, 22, 27);       // Base window background (#14161B)
+    public static Color BG_WORKSPACE     = new Color(16, 17, 21);       // Canvas workspace background (#101115)
+    public static Color BG_SIDEBAR       = new Color(24, 27, 34);       // Sidebar background (#181B22)
+    public static Color BG_CARD          = new Color(32, 36, 46);       // Card background (#20242E)
+    public static Color BG_CARD_SUBTLE   = new Color(26, 29, 38);       // Inset panel background (#1A1D26)
+    public static Color BG_INPUT         = new Color(18, 20, 26);       // Input field background (#12141A)
+    public static Color BG_TOOLBAR       = new Color(24, 26, 33);       // Toolbar surface background (#181A21)
+    public static Color BG_STATUS        = new Color(18, 20, 26);       // Status bar background (#12141A)
+    public static Color BG_PAPER         = Color.WHITE;                 // Drawing canvas paper
+    public static Color BG_SELECTION     = new Color(10, 132, 255, 180);// Selection highlight
+    public static Color BG_GLASS_SURFACE = new Color(36, 40, 52, 210); // Translucent card surface
 
-    // Liquid Glass Specular & Optical Edge Tokens
-    public static Color SPECULAR_HIGHLIGHT = new Color(255, 255, 255, 60); // Top edge specular refraction rim
-    public static Color SPECULAR_SHEEN     = new Color(255, 255, 255, 25); // Surface light luster
-    public static Color BORDER_GLASS_TOP   = new Color(255, 255, 255, 45); // Top beveled light rim
-    public static Color BORDER_GLASS_BOTTOM= new Color(0, 0, 0, 85);       // Bottom contact shadow
+    // Surface Highlights & Shadows
+    public static Color SPECULAR_HIGHLIGHT = new Color(255, 255, 255, 60); // Top edge rim
+    public static Color SPECULAR_SHEEN     = new Color(255, 255, 255, 25); // Top sheen
+    public static Color BORDER_GLASS_TOP   = new Color(255, 255, 255, 45); // Top edge line
+    public static Color BORDER_GLASS_BOTTOM= new Color(0, 0, 0, 85);       // Bottom edge shadow
 
     // Accessible Typography & Contrast (WCAG 2.1 AAA / AA)
-    public static Color TEXT_PRIMARY     = new Color(255, 255, 255);    // 100% Crisp white (>= 14:1 contrast)
-    public static Color TEXT_SECONDARY   = new Color(214, 218, 226);    // Legible silver (#D6DAE2, >= 9.5:1 contrast)
-    public static Color TEXT_MUTED       = new Color(156, 163, 175);    // Clear steel units & labels (#9CA3AF, >= 5.5:1 contrast)
-    public static Color TEXT_DISABLED    = new Color(100, 106, 118);    // Disabled state (#646A76)
+    public static Color TEXT_PRIMARY     = new Color(255, 255, 255);    // Crisp white text
+    public static Color TEXT_SECONDARY   = new Color(214, 218, 226);    // Secondary silver text
+    public static Color TEXT_MUTED       = new Color(156, 163, 175);    // Muted units & labels
+    public static Color TEXT_DISABLED    = new Color(100, 106, 118);    // Disabled text
 
-    // Apple HIG Vibrancy State & Action Accents
-    public static Color ACCENT_PRIMARY   = new Color(10, 132, 255);      // Apple System Blue (#0A84FF)
+    // Accents & Actions
+    public static Color ACCENT_PRIMARY   = new Color(10, 132, 255);      // Primary blue (#0A84FF)
     public static Color ACCENT_PRIMARY_HOVER = new Color(30, 144, 255); // #1E90FF
     public static Color ACCENT_PRIMARY_PRESS = new Color(0, 113, 227);  // #0071E3
-    public static Color ACCENT_SUCCESS   = new Color(48, 209, 88);      // Apple System Green (#30D158, Generate)
+    public static Color ACCENT_SUCCESS   = new Color(48, 209, 88);      // Green (#30D158, Generate)
     public static Color ACCENT_SUCCESS_HOVER = new Color(58, 222, 99);  // #3ADE63
-    public static Color ACCENT_DANGER    = new Color(255, 69, 58);      // Apple System Red (#FF453A, Stop)
+    public static Color ACCENT_DANGER    = new Color(255, 69, 58);      // Red (#FF453A, Stop)
     public static Color ACCENT_DANGER_HOVER = new Color(255, 90, 80);   // #FF5A50
-    public static Color ACCENT_WARNING   = new Color(255, 159, 10);     // Apple System Orange (#FF9F0A, Export All)
+    public static Color ACCENT_WARNING   = new Color(255, 159, 10);     // Orange (#FF9F0A, Export)
     public static Color ACCENT_WARNING_HOVER = new Color(255, 175, 35); // #FFAF23
-    public static Color ACCENT_PURPLE    = new Color(191, 90, 242);     // Apple System Purple (#BF5AF2, Quick SVG)
+    public static Color ACCENT_PURPLE    = new Color(191, 90, 242);     // Purple (#BF5AF2, SVG Export)
     public static Color ACCENT_PURPLE_HOVER = new Color(205, 110, 250); // #CD6EFA
-    public static Color ACCENT_SECONDARY = new Color(46, 50, 62);       // Translucent Secondary Glass (#2E323E)
+    public static Color ACCENT_SECONDARY = new Color(46, 50, 62);       // Secondary button (#2E323E)
     public static Color ACCENT_SECONDARY_HOVER = new Color(58, 64, 78); // #3A404E
     public static Color ACCENT_HOVER     = new Color(30, 144, 255);
 
-    // Liquid Glass Borders & Strokes
-    public static Color BORDER_SUBTLE    = new Color(52, 57, 70);       // Structure strokes (#343946)
-    public static Color BORDER_STRONG    = new Color(72, 80, 96);       // Interactive strokes (#485060)
-    public static Color BORDER_FOCUS     = new Color(10, 132, 255);     // Apple focus ring (#0A84FF)
+    // Borders & Focus
+    public static Color BORDER_SUBTLE    = new Color(52, 57, 70);       // Subtle borders (#343946)
+    public static Color BORDER_STRONG    = new Color(72, 80, 96);       // Interactive borders (#485060)
+    public static Color BORDER_FOCUS     = new Color(10, 132, 255);     // Focus ring (#0A84FF)
 
     // Standard Geometry & Spacing Tokens
-    public static int CORNER_RADIUS      = 6;                           // Apple smooth rounded radius
-    public static int CORNER_RADIUS_CARD = 8;                           // Apple elevated card radius
+    public static int CORNER_RADIUS      = 6;                           // Button corner radius
+    public static int CORNER_RADIUS_CARD = 8;                           // Card corner radius
     public static final int CONTROL_HEIGHT     = 32;                          // Standard 32px desktop control height
     public static final int INPUT_HEIGHT       = 28;                          // Form input height
     public static final int SPACING_SMALL      = 6;

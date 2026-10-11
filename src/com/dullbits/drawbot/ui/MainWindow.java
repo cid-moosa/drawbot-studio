@@ -233,19 +233,19 @@ public final class MainWindow extends JFrame {
 
         JMenu themesMenu = new JMenu("Theme Preset");
         DrawbotTheme.styleMenu(themesMenu);
-        themesMenu.add(createStyledItem("Liquid Glass Dark (Default)", e -> {
+        themesMenu.add(createStyledItem("Dark Theme (Default)", e -> {
             DrawbotPreferences.getInstance().setTheme(DrawbotPreferences.ThemePreset.LIQUID_GLASS_DARK);
             onPreferencesUpdated();
         }));
-        themesMenu.add(createStyledItem("Obsidian Dark (Solid)", e -> {
+        themesMenu.add(createStyledItem("Deep Dark", e -> {
             DrawbotPreferences.getInstance().setTheme(DrawbotPreferences.ThemePreset.OBSIDIAN_DARK);
             onPreferencesUpdated();
         }));
-        themesMenu.add(createStyledItem("Monterey Light (Studio Light)", e -> {
+        themesMenu.add(createStyledItem("Light Theme", e -> {
             DrawbotPreferences.getInstance().setTheme(DrawbotPreferences.ThemePreset.MONTEREY_LIGHT);
             onPreferencesUpdated();
         }));
-        themesMenu.add(createStyledItem("High Contrast Dark", e -> {
+        themesMenu.add(createStyledItem("High Contrast", e -> {
             DrawbotPreferences.getInstance().setTheme(DrawbotPreferences.ThemePreset.HIGH_CONTRAST);
             onPreferencesUpdated();
         }));

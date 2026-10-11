@@ -15,10 +15,10 @@ import java.util.function.Consumer;
 public final class DrawbotPreferences {
 
     public enum ThemePreset {
-        LIQUID_GLASS_DARK("Liquid Glass Dark (Default)", "Translucent obsidian surfaces with specular light lusters"),
-        OBSIDIAN_DARK("Obsidian Dark (Solid)", "Opaque deep dark theme with zero glass transparency"),
-        MONTEREY_LIGHT("Monterey Light", "Clean, high-legibility silver-white studio theme"),
-        HIGH_CONTRAST("High Contrast Dark", "WCAG AAA vivid accents, solid contrast borders, enhanced readability");
+        LIQUID_GLASS_DARK("Dark Theme (Default)", "Dark workspace surfaces with subtle contrast"),
+        OBSIDIAN_DARK("Deep Dark", "Opaque dark theme"),
+        MONTEREY_LIGHT("Light Theme", "Clean light workspace theme"),
+        HIGH_CONTRAST("High Contrast", "High contrast dark theme for enhanced visibility");
 
         private final String displayName;
         private final String description;
@@ -29,12 +29,12 @@ public final class DrawbotPreferences {
     }
 
     public enum AccentColorPreset {
-        APPLE_BLUE("Apple System Blue", new Color(10, 132, 255)),
-        EMERALD_GREEN("Emerald Green", new Color(48, 209, 88)),
-        PURPLE("Electric Purple", new Color(191, 90, 242)),
-        ORANGE("System Orange", new Color(255, 159, 10)),
-        CRIMSON("Studio Crimson", new Color(255, 69, 58)),
-        CYAN("Nordic Cyan", new Color(90, 200, 250));
+        APPLE_BLUE("Blue (Default)", new Color(10, 132, 255)),
+        EMERALD_GREEN("Green", new Color(48, 209, 88)),
+        PURPLE("Purple", new Color(191, 90, 242)),
+        ORANGE("Orange", new Color(255, 159, 10)),
+        CRIMSON("Red", new Color(255, 69, 58)),
+        CYAN("Cyan", new Color(90, 200, 250));
 
         private final String displayName;
         private final Color color;
@@ -70,10 +70,10 @@ public final class DrawbotPreferences {
     }
 
     public enum GridColorPreset {
-        APPLE_BLUE("Apple Blue", new Color(40, 110, 240, 160)),
-        EMERALD_GREEN("Emerald Green", new Color(48, 209, 88, 160)),
-        AMBER_ORANGE("Amber Orange", new Color(255, 159, 10, 160)),
-        SLATE_GREY("Subtle Slate", new Color(140, 150, 170, 160));
+        APPLE_BLUE("Blue", new Color(40, 110, 240, 160)),
+        EMERALD_GREEN("Green", new Color(48, 209, 88, 160)),
+        AMBER_ORANGE("Orange", new Color(255, 159, 10, 160)),
+        SLATE_GREY("Slate Grey", new Color(140, 150, 170, 160));
 
         private final String displayName;
         private final Color color;

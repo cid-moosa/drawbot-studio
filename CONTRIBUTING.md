@@ -68,7 +68,7 @@ java -cp bin com.dullbits.drawbot.ui.MainWindow
 ## Architecture & Code Guidelines
 
 1. **Zero External Dependencies**: Core functionality relies exclusively on the standard Java SE runtime (`java.awt`, `javax.swing`, `java.awt.image`). Avoid adding heavyweight third-party JAR dependencies.
-2. **Liquid Glass Design System**: UI styling is centralized in `DrawbotTheme` and `DrawbotPreferences`. Custom Swing components should support both dark and light modes, smooth anti-aliased borders, and responsive layouts.
+2. **UI & Theme Architecture**: UI styling is centralized in `DrawbotTheme` and `DrawbotPreferences`. Custom Swing components should support both dark and light modes with responsive layouts.
 3. **Thread Safety**: Long-running image processing and path generation must execute on background threads via `SwingWorker` or `CompletableFuture`, keeping the UI responsive at 60 FPS.
 4. **Memory Efficiency**: Never allocate multi-million element fixed arrays on the heap. Use dynamic, primitive-backed buffers like `SegmentBuffer`.
 5. **G-Code Compliance**: Generated G-code must be standard metric absolute (`G21`, `G90`) and compatible with GRBL, Marlin, and custom drawbot controllers.
