@@ -1,0 +1,66 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    name: Build & Test (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ ubuntu-latest, windows-latest ]
+        java: [ '17' ]
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up JDK ${{ matrix.java }}
+        uses: actions/setup-java@v4
+        with:
+          java-version: ${{ matrix.java }}
+          distribution: 'temurin'
+
+      # Linux / macOS step
+      - name: Compile Application Sources (Linux)
+        if: runner.os != 'Windows'
+        run: |
+          mkdir -p bin
+          javac -d bin -encoding UTF-8 $(find src -name "*.java")
+
+      - name: Compile Test Sources (Linux)
+        if: runner.os != 'Windows'
+        run: |
+          javac -cp bin -d bin -encoding UTF-8 $(find tests -name "*.java")
+
+      - name: Run Automated Tests (Linux)
+        if: runner.os != 'Windows'
+        run: |
+          java -Djava.awt.headless=true -cp bin com.dullbits.drawbot.tests.AllTestsRunner
+
+      # Windows step
+      - name: Compile Application Sources (Windows)
+        if: runner.os == 'Windows'
+        shell: powershell
+        run: |
+          New-Item -ItemType Directory -Force -Path bin | Out-Null
+          $src = Get-ChildItem -Recurse -Filter "*.java" -Path src | ForEach-Object { $_.FullName }
+          javac -d bin -encoding UTF-8 $src
+
+      - name: Compile Test Sources (Windows)
+        if: runner.os == 'Windows'
+        shell: powershell
+        run: |
+          $tests = Get-ChildItem -Recurse -Filter "*.java" -Path tests | ForEach-Object { $_.FullName }
+          javac -cp bin -d bin -encoding UTF-8 $tests
+
+      - name: Run Automated Tests (Windows)
+        if: runner.os == 'Windows'
+        shell: powershell
+        run: |
+          java "-Djava.awt.headless=true" -cp bin com.dullbits.drawbot.tests.AllTestsRunner
