@@ -9,7 +9,8 @@
 
 **A desktop application for converting raster images into multi-pen vector paths and exporting G-code, SVG, and vector PDF drawings for pen plotters and CNC drawbots.**
 
-[Quick Start](#quick-start) •
+[Downloads](#downloads--cross-platform-releases-plug--play) •
+[Quick Start](#quick-start-guide) •
 [Features](#features) •
 [Building & Testing](#building--testing) •
 [Documentation](#documentation) •
@@ -54,16 +55,49 @@ Based on Scott Cooper's open-source `Drawbot_image_to_gcode_v2` (GPL-3.0).
 
 ---
 
-## Quick Start (Plug & Play)
+## Downloads & Cross-Platform Releases (Plug & Play)
 
-### Running on Windows
-Choose any of the following (all run immediately with zero setup):
+Pre-built plug-and-play releases are available for Windows, macOS, Linux, and universal cross-platform:
 
-- **Option A (1-Click Launcher)**: Double-click `Run_Drawbot_Studio.bat` (or `Launch.bat`) in the project root.
-- **Option B (Direct Standalone Executable)**: Open `builds\dist\DrawbotStudio\` and double-click `DrawbotStudio.exe`.
-- **Option C (Portable ZIP Package)**: Download or extract `builds\DrawbotStudio-v1.0.0-Windows-x64.zip` and run `DrawbotStudio.exe`.
+| Platform | Package | Size | Quick Start |
+|---|---|---|---|
+| **Windows (x64)** | [DrawbotStudio-v1.0.0-Windows-x64.zip](https://github.com/cid-moosa/drawbot-studio/releases/download/v1.0.0/DrawbotStudio-v1.0.0-Windows-x64.zip) | 73.9 MB | **Zero install.** Extract & double-click `DrawbotStudio.exe` (Bundled OpenJDK 17 runtime included) |
+| **macOS (Intel & Apple Silicon)** | [DrawbotStudio-v1.0.0-macOS.zip](https://github.com/cid-moosa/drawbot-studio/releases/download/v1.0.0/DrawbotStudio-v1.0.0-macOS.zip) | 26.0 MB | Extract & double-click `DrawbotStudio.command` (or run `./run.sh`) |
+| **Linux (x64 / ARM)** | [DrawbotStudio-v1.0.0-Linux.tar.gz](https://github.com/cid-moosa/drawbot-studio/releases/download/v1.0.0/DrawbotStudio-v1.0.0-Linux.tar.gz) | 25.9 MB | Extract & run `./run.sh` or double-click `drawbot-studio.desktop` |
+| **Universal (Any OS with Java 17+)** | [DrawbotStudio-v1.0.0-Universal.jar](https://github.com/cid-moosa/drawbot-studio/releases/download/v1.0.0/DrawbotStudio-v1.0.0-Universal.jar) | 13.2 MB | 1-file download. Double-click or run `java -jar DrawbotStudio-v1.0.0-Universal.jar` |
 
-*No installation, environment variables, or Java setup required. The application includes its own optimized runtime.*
+---
+
+## Quick Start Guide
+
+### Windows (x64)
+- **Portable ZIP**: Download [DrawbotStudio-v1.0.0-Windows-x64.zip](https://github.com/cid-moosa/drawbot-studio/releases/download/v1.0.0/DrawbotStudio-v1.0.0-Windows-x64.zip), extract it, and double-click `DrawbotStudio.exe`.
+- **Repository Clone**: Double-click `Run_Drawbot_Studio.bat` (or `Launch.bat`) in the project root.
+- *No installation or Java setup required. Includes self-contained OpenJDK 17 runtime.*
+
+### macOS (Intel & Apple Silicon)
+1. Ensure Java 17+ is installed (`java -version` or `brew install openjdk@17`).
+2. Download [DrawbotStudio-v1.0.0-macOS.zip](https://github.com/cid-moosa/drawbot-studio/releases/download/v1.0.0/DrawbotStudio-v1.0.0-macOS.zip) and extract it.
+3. Double-click `DrawbotStudio.command` (or in Terminal: `chmod +x DrawbotStudio.command run.sh && ./DrawbotStudio.command`).
+   *(If prompted by Gatekeeper, right-click `DrawbotStudio.command` -> Open -> Open, or run `xattr -cr .`).*
+
+### Linux (Ubuntu, Debian, Fedora, Arch)
+1. Ensure Java 17+ is installed (`sudo apt install openjdk-17-jre` or `sudo dnf install java-17-openjdk`).
+2. Download [DrawbotStudio-v1.0.0-Linux.tar.gz](https://github.com/cid-moosa/drawbot-studio/releases/download/v1.0.0/DrawbotStudio-v1.0.0-Linux.tar.gz) and extract:
+   ```bash
+   tar -xzf DrawbotStudio-v1.0.0-Linux.tar.gz
+   cd DrawbotStudio
+   chmod +x run.sh
+   ./run.sh
+   ```
+   *(Or double-click `drawbot-studio.desktop`).*
+
+### Universal Executable JAR
+1. Download [DrawbotStudio-v1.0.0-Universal.jar](https://github.com/cid-moosa/drawbot-studio/releases/download/v1.0.0/DrawbotStudio-v1.0.0-Universal.jar).
+2. Double-click the file, or run from command line on any system:
+   ```bash
+   java -jar DrawbotStudio-v1.0.0-Universal.jar
+   ```
 
 ### Basic Workflow
 1. **Open Image**: Click **Open Image** or drag and drop an image onto the canvas.
