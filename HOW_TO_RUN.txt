@@ -1,0 +1,39 @@
+========================================================================
+                      DRAWBOT STUDIO v1.0.0
+         Plug & Play Standalone Windows x64 Application
+========================================================================
+
+HOW TO RUN:
+Option A (Fastest): Double-click "Run_Drawbot_Studio.bat" right here!
+Option B: Open the "builds\dist\DrawbotStudio\" folder and double-click
+          "DrawbotStudio.exe".
+
+- 100% Standalone: No installation and no Java setup required.
+- Everything is bundled (embedded OpenJDK 17 runtime included).
+- Hardware-accelerated Direct3D vector graphics rendering.
+
+QUICK START WORKFLOW:
+1. Launch the app using "Run_Drawbot_Studio.bat" or "DrawbotStudio.exe".
+2. Open an image: Click "Open Image..." or drag and drop any PNG, JPG,
+   or BMP file directly onto the canvas.
+3. Select an algorithm: Choose your path module in the "Algorithm" tab
+   (Original Squiggles, Modulated Spiral, Wavy Squares, or Waveform).
+4. Configure pens: In the "Pens" tab, pick your palette preset (e.g.,
+   Dark Greys, Purples, Blues) and adjust pen thresholds.
+5. Click "Generate" (or press Enter) to watch the vector paths draw
+   in real time!
+6. Click "Export..." or "Export SVG" to save your machine-ready G-code,
+   SVG, or vector PDF drawings.
+
+KEYBOARD SHORTCUTS:
+- [ / ]      : Zoom In / Zoom Out
+- \          : Fit to View (Reset Zoom & Pan)
+- r          : Rotate 90 degrees clockwise
+- G          : Toggle Coordinate Grid & Machine Origin
+- d          : View Drawing
+- O          : View Original Image
+- o          : View Reference Image
+- s          : Stop / Cancel Generation
+- g          : Open Multi-Format Export Dialog
+- Ctrl + ,   : Open Preferences & Theme Customizer
+========================================================================

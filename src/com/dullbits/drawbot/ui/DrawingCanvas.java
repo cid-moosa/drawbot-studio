@@ -11,6 +11,7 @@ import java.awt.datatransfer.DataFlavor;
 import java.awt.dnd.*;
 import java.awt.event.*;
 import java.awt.geom.AffineTransform;
+import java.awt.geom.Path2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.util.List;
@@ -524,7 +525,9 @@ public final class DrawingCanvas extends JPanel {
         g2.setStroke(new BasicStroke(0.85f, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
 
         int lastPen = -1;
-        Color currentColor = Color.BLACK;
+        Path2D.Float currentPath = null;
+        float lastEndX = Float.NaN;
+        float lastEndY = Float.NaN;
 
         for (int i = 0; i < lineCount; i++) {
             DrawingSegment seg = segmentBuffer.get(i);
@@ -532,14 +535,35 @@ public final class DrawingCanvas extends JPanel {
             if (displayMode == DisplayMode.PEN_ONLY && seg.penNumber != selectedPen) continue;
 
             if (seg.penNumber != lastPen) {
+                if (currentPath != null) {
+                    g2.draw(currentPath);
+                }
+                currentPath = new Path2D.Float();
                 String markerCode = penDistribution.getMarkerCodeForPen(seg.penNumber);
-                currentColor = CopicPalette.getOriginalColor(markerCode);
+                Color currentColor = CopicPalette.getOriginalColor(markerCode);
                 g2.setColor(currentColor);
                 lastPen = seg.penNumber;
+                lastEndX = Float.NaN;
+                lastEndY = Float.NaN;
             }
 
-            g2.drawLine((int) Math.round(seg.x1), (int) Math.round(seg.y1),
-                        (int) Math.round(seg.x2), (int) Math.round(seg.y2));
+            if (currentPath == null) {
+                currentPath = new Path2D.Float();
+            }
+
+            // High-speed polyline continuation (batches connected lines into continuous sub-paths)
+            if (!Float.isNaN(lastEndX) && Math.abs(lastEndX - seg.x1) < 0.05f && Math.abs(lastEndY - seg.y1) < 0.05f) {
+                currentPath.lineTo(seg.x2, seg.y2);
+            } else {
+                currentPath.moveTo(seg.x1, seg.y1);
+                currentPath.lineTo(seg.x2, seg.y2);
+            }
+            lastEndX = seg.x2;
+            lastEndY = seg.y2;
+        }
+
+        if (currentPath != null) {
+            g2.draw(currentPath);
         }
     }
 

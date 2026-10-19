@@ -54,10 +54,16 @@ Based on Scott Cooper's open-source `Drawbot_image_to_gcode_v2` (GPL-3.0).
 
 ---
 
-## Quick Start
+## Quick Start (Plug & Play)
 
-### Running Pre-Built Binary (Windows)
-Launch `DrawbotStudio.exe` from `builds/dist/DrawbotStudio/`.
+### Running on Windows
+Choose any of the following (all run immediately with zero setup):
+
+- **Option A (1-Click Launcher)**: Double-click `Run_Drawbot_Studio.bat` (or `Launch.bat`) in the project root.
+- **Option B (Direct Standalone Executable)**: Open `builds\dist\DrawbotStudio\` and double-click `DrawbotStudio.exe`.
+- **Option C (Portable ZIP Package)**: Download or extract `builds\DrawbotStudio-v1.0.0-Windows-x64.zip` and run `DrawbotStudio.exe`.
+
+*No installation, environment variables, or Java setup required. The application includes its own optimized runtime.*
 
 ### Basic Workflow
 1. **Open Image**: Click **Open Image** or drag and drop an image onto the canvas.
